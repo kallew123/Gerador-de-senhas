@@ -53,3 +53,5 @@ resultado_var = tk.StringVar()
 tk.Entry(janela, textvariable=resultado_var, state="readonly", width=40, justify="center").pack()
 
 janela.mainloop()
+
+# Nickklb
