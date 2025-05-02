@@ -1,56 +1,55 @@
 import string
 import random
-# String para ter lista de caracteres prontos e ramdom para gerar aleatoriamente
+import tkinter as tk
 
 def gerar_senha(tamanho, modo):
     if modo == 1:
-        caracteres = string.digits 
+        caracteres = string.digits
     elif modo == 2:
         caracteres = string.ascii_letters
     elif modo == 3:
         caracteres = string.ascii_letters + string.digits
     elif modo == 4:
-        caracteres = string.ascii_letters + string.digits + string.punctuation
+        caracteres = string.ascii_letters + string.punctuation + string.digits
 
     senha = ''.join(random.choice(caracteres) for _ in range(tamanho))
     return senha
 
+def ao_clicar_gerar():
+    try:
+        modo = int(tipo_var.get())
+        tamanho = int(entry_tamanho.get())
+        if modo < 1 or modo > 4:
+            resultado_var.set("Tipo de senha invalido! (1 a 4)")
+            return
+        if tamanho < 4:
+            resultado_var.set("Tamanho de senha invalida! (Menor que 4)")
+            return
+        senha = gerar_senha(tamanho, modo)
+        resultado_var.set(f"{senha}")
 
-def main():
-    print("🔐 Gerador de Senhas Fortes")
-    while True:
-        print("\nEscolha o seu tipo de senha:")
-        print("1 - Apenas números")
-        print("2 - Apenas letras (maiúsculas e minúsculas)")
-        print("3 - Letras e números")
-        print("4 - Letras, números e símbolos")
-        
-        try:
-            modo = int(input("Digite o tipo desejado (1 a 4): "))  
-        
-            if modo < 1 or modo > 4:
-                print("\n❌ Número inválido. Digite um número de 1 a 4.")
-                continue
+    except ValueError:
+        resultado_var.set("Digite números válidos.")
 
-            break
-        except ValueError:
-            print("\n❌ Entrada inválida. Por favor, digite um número.")
-            continue
+janela = tk.Tk()
+janela.title("Gerador de senha")
+janela.geometry("600x450")
 
-    while True:
-        try:
-            tamanho = int(input("Digite o tamanho desejado (maior que 4 caracteres): ")) 
-            if tamanho < 4:
-               print("\n❌ O tamanho mínimo recomendado é 4.")
-               continue
-            break
-        except ValueError:
-            print("\n❌ Entrada inválida. Digite um número.")
-            continue
+tk.Label(janela, text="Tamanho da senha:")
+entry_tamanho = tk.Entry(janela)
+entry_tamanho.pack()
 
-    senha = gerar_senha(tamanho, modo)
+tk.Label(janela, text="Tipo de senha:")
+tipo_var = tk.StringVar(value= 0)
 
-    print(f"\n✅ Senha gerada: {senha}")
+tk.Radiobutton(janela, text="1 - Apenas números", variable=tipo_var, value="1").pack(anchor='w')
+tk.Radiobutton(janela, text="2 - Apenas letras", variable=tipo_var, value="2").pack(anchor='w')
+tk.Radiobutton(janela, text="3 - Letras e números", variable=tipo_var, value="3").pack(anchor='w')
+tk.Radiobutton(janela, text="4 - Letras, números e símbolos", variable=tipo_var, value="4").pack(anchor='w')
 
-if __name__ == "__main__":
-    main()
+tk.Button(janela, text="Gerar Senha", command=ao_clicar_gerar).pack(pady=10)
+
+resultado_var = tk.StringVar()
+tk.Entry(janela, textvariable=resultado_var, state="readonly", width=40, justify="center").pack()
+
+janela.mainloop()
