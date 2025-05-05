@@ -2,6 +2,7 @@ import string
 import random
 import tkinter as tk
 
+
 def gerar_senha(tamanho, modo):
     if modo == 1:
         caracteres = string.digits
@@ -15,31 +16,32 @@ def gerar_senha(tamanho, modo):
     senha = ''.join(random.choice(caracteres) for _ in range(tamanho))
     return senha
 
+
 def ao_clicar_gerar():
     try:
         modo = int(tipo_var.get())
         tamanho = int(entry_tamanho.get())
-        if modo < 1 or modo > 4:
-            resultado_var.set("Tipo de senha invalido! (1 a 4)")
-            return
+
         if tamanho < 4:
             resultado_var.set("Tamanho de senha invalida! (Menor que 4)")
             return
+        
         senha = gerar_senha(tamanho, modo)
         resultado_var.set(f"{senha}")
 
     except ValueError:
         resultado_var.set("Digite números válidos.")
 
+
 janela = tk.Tk()
 janela.title("Gerador de senha")
 janela.geometry("600x450")
 
-tk.Label(janela, text="Tamanho da senha:")
+tk.Label(janela, text="Tamanho da senha").pack()
 entry_tamanho = tk.Entry(janela)
 entry_tamanho.pack()
 
-tk.Label(janela, text="Tipo de senha:")
+tk.Label(janela, text="Tipo de senha").pack()
 tipo_var = tk.StringVar(value= 0)
 
 tk.Radiobutton(janela, text="1 - Apenas números", variable=tipo_var, value="1").pack(anchor='w')
