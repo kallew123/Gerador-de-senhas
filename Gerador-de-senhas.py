@@ -56,4 +56,4 @@ tk.Entry(janela, textvariable=resultado_var, state="readonly", width=40, justify
 
 janela.mainloop()
 
-# Nickklb
+#kallew123
