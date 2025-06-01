@@ -1,8 +1,8 @@
-🔐 Gerador de Senhas com Tkinter
+## 🔐 Gerador de Senhas com Tkinter
 
 Um gerador de senhas seguro e personalizável feito com Python e Tkinter para interface gráfica.
 
-🧠 Funcionalidades
+## 🧠 Funcionalidades
 
 Geração de senhas aleatórias
 
@@ -13,13 +13,13 @@ Opções para incluir:
    - Símbolos.
    - Definir o comprimento da senha
 
-🖥️ Tecnologias Usadas
+## 🖥️ Tecnologias Usadas
 
 Python 3
 
 Tkinter (GUI padrão do Python)
 
-🚀 Como executar:
+## 🚀 Como executar:
 
 Baixe ou copie o arquivo `gerador_senhas.py`.
 
@@ -30,7 +30,7 @@ Execute o código:
    - Pressione `Ctrl + F5` ou clique com o botão direito e selecione **"Run Python File"**.
    - O programa abrirá uma janela com a interface do gerador de senhas.
 
-📌 Observações
+## 📌 Observações
 
 Nenhuma dependência externa é necessária.
 
@@ -39,6 +39,6 @@ Tudo é executado localmente no seu computador.
 Ideal para quem deseja gerar senhas seguras com facilidade.
 
 
-👨‍💻 Autor
+## 👨‍💻 Autor
 
    Kallew123.
