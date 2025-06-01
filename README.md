@@ -19,8 +19,10 @@ Opções para incluir:
 🚀 Como executar:
 
 -Baixe ou copie o arquivo `gerador_senhas.py`.
+
 -Abra o arquivo no VS Code:
    - Se quiser, crie um novo arquivo com o nome `gerador_senhas.py` e cole o conteúdo do código.
+
 -Execute o código:
    - Pressione `Ctrl + F5` ou clique com o botão direito e selecione **"Run Python File"**.
    - O programa abrirá uma janela com a interface do gerador de senhas.
