@@ -7,33 +7,26 @@ Um gerador de senhas seguro e personalizável feito com Python e Tkinter para in
 Geração de senhas aleatórias
 
 Opções para incluir:
-
--Letras maiúsculas
-
--Letras minúsculas
-
--Números
-
--Símbolos
-
--Definir o comprimento da senha
-
--Copiar senha com um clique
+   - Letras maiúsculas.
+   - Letras minúsculas
+   - Números.
+   - Símbolos.
+   - Definir o comprimento da senha
 
 🖥️ Tecnologias Usadas
 
--Python 3
+Python 3
 
--Tkinter (GUI padrão do Python)
+Tkinter (GUI padrão do Python)
 
 🚀 Como executar:
 
--Baixe ou copie o arquivo `gerador_senhas.py`.
+Baixe ou copie o arquivo `gerador_senhas.py`.
 
--Abra o arquivo no VS Code:
+Abra o arquivo no VS Code:
    - Se quiser, crie um novo arquivo com o nome `gerador_senhas.py` e cole o conteúdo do código.
 
--Execute o código:
+Execute o código:
    - Pressione `Ctrl + F5` ou clique com o botão direito e selecione **"Run Python File"**.
    - O programa abrirá uma janela com a interface do gerador de senhas.
 
